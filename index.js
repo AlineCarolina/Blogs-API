@@ -4,10 +4,12 @@ const bodyParser = require('body-parser');
 const { validateUser } = require('./middlewares/validateUser');
 const { validateLogin } = require('./middlewares/validateLogin');
 const { validateToken } = require('./middlewares/validateToken');
+const { validateCategorie } = require('./middlewares/validateCategorie');
 const { errorMiddleware } = require('./middlewares/errorMiddleware');
 
 const userController = require('./controllers/userController');
 const loginController = require('./controllers/loginController');
+const categorieController = require('./controllers/categorieController');
 
 const app = express();
 
@@ -29,3 +31,5 @@ app.post('/login', validateLogin, loginController.login);
 app.get('/user', validateToken, userController.getAll);
 
 app.get('/user/:id', validateToken, userController.getById);
+
+app.post('/categories', validateToken, validateCategorie, categorieController.create);
