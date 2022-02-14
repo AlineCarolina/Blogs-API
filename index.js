@@ -2,8 +2,10 @@ const express = require('express');
 const bodyParser = require('body-parser');
 
 const { validateUser } = require('./middlewares/validateUser');
+const { validateLogin } = require('./middlewares/validateLogin');
 const { errorMiddleware } = require('./middlewares/errorMiddleware');
 const userController = require('./controllers/userController');
+const loginController = require('./controllers/loginController');
 
 const app = express();
 
@@ -19,3 +21,5 @@ app.get('/', (request, response) => {
 });
 
 app.post('/User', validateUser, userController.create);
+
+app.post('/login', validateLogin, loginController.login);

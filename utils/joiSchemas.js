@@ -7,6 +7,12 @@ const userSchema = Joi.object({
   image: Joi.string().required(),
 });
 
+const loginSchema = Joi.object({
+  email: Joi.string().email().empty().required(),
+  password: Joi.string().min(6).message('"password" length must be 6 characters long').required(),
+});
+
 module.exports = {
   userSchema,
+  loginSchema,
 };
