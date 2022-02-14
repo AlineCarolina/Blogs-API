@@ -27,3 +27,5 @@ app.post('/user', validateUser, userController.create);
 app.post('/login', validateLogin, loginController.login);
 
 app.get('/user', validateToken, userController.getAll);
+
+app.get('/user/:id', validateToken, userController.getById);
