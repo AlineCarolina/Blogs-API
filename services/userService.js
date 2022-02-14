@@ -15,9 +15,16 @@ const findEmail = async ({ email }) => {
     const result = await User.findAll({ where: { email } });
   
     return result;
-  };
+};
+
+const getAll = async () => {
+  const result = await User.findAll();
+
+  return result;
+};
 
 module.exports = {
     create,
     findEmail,
+    getAll,
 };

@@ -3,7 +3,9 @@ const bodyParser = require('body-parser');
 
 const { validateUser } = require('./middlewares/validateUser');
 const { validateLogin } = require('./middlewares/validateLogin');
+const { validateToken } = require('./middlewares/validateToken');
 const { errorMiddleware } = require('./middlewares/errorMiddleware');
+
 const userController = require('./controllers/userController');
 const loginController = require('./controllers/loginController');
 
@@ -20,6 +22,8 @@ app.get('/', (request, response) => {
   response.send();
 });
 
-app.post('/User', validateUser, userController.create);
+app.post('/user', validateUser, userController.create);
 
 app.post('/login', validateLogin, loginController.login);
+
+app.get('/user', validateToken, userController.getAll);
