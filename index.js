@@ -1,4 +1,3 @@
-require('dotenv').config();
 const express = require('express');
 const bodyParser = require('body-parser');
 
@@ -10,7 +9,7 @@ const app = express();
 
 app.use(bodyParser.json());
 
-app.listen(process.env.PORT, () => console.log(`Escutando na porta ${process.env.PORT}`));
+app.listen(3000, () => console.log('Escutando na porta 3000'));
 
 app.use(errorMiddleware);
 
