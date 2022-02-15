@@ -10,6 +10,16 @@ const createToken = (data) => {
   return token;
 };
 
+const decodeToken = (authorization) => {
+  const result = jwt.decode(authorization, process.env.JWT_SECRET);
+
+  console.log('DECODE TOKEN', result);
+  const id = 1;
+
+  return id;
+};
+
 module.exports = {
     createToken,
+    decodeToken,
 };

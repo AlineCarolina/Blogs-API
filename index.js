@@ -5,11 +5,13 @@ const { validateUser } = require('./middlewares/validateUser');
 const { validateLogin } = require('./middlewares/validateLogin');
 const { validateToken } = require('./middlewares/validateToken');
 const { validateCategorie } = require('./middlewares/validateCategorie');
+const { validateBlogPost } = require('./middlewares/validateBlogPost');
 const { errorMiddleware } = require('./middlewares/errorMiddleware');
 
 const userController = require('./controllers/userController');
 const loginController = require('./controllers/loginController');
 const categorieController = require('./controllers/categorieController');
+const blogPostController = require('./controllers/blogPostController');
 
 const app = express();
 
@@ -35,3 +37,5 @@ app.get('/user/:id', validateToken, userController.getById);
 app.post('/categories', validateToken, validateCategorie, categorieController.create);
 
 app.get('/categories', validateToken, categorieController.getAll);
+
+app.post('/post', validateToken, validateBlogPost, blogPostController.create);
