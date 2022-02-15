@@ -39,3 +39,5 @@ app.post('/categories', validateToken, validateCategorie, categorieController.cr
 app.get('/categories', validateToken, categorieController.getAll);
 
 app.post('/post', validateToken, validateBlogPost, blogPostController.create);
+
+app.get('/post', validateToken, blogPostController.getAll);
