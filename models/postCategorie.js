@@ -1,8 +1,7 @@
 module.exports = (sequelize, _DataTypes) => {
-    const PostCategorie = sequelize.define('PostCategorie', {}, // mapeia PK automaticamente (Renatão comentou em aula)
+    const PostCategorie = sequelize.define('PostCategorie', {},
       { timestamps: false, tableName: 'PostsCategories' });
-  
-    // relacionamento N:N - material da aula 24.2 no course
+
     PostCategorie.associate = (models) => {
       models.Categorie.belongsToMany(models.BlogPost, { 
           as: 'blogPosts',
