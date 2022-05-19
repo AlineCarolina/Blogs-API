@@ -7,7 +7,7 @@ const create = async (req, res, next) => {
 
     const findEmail = await userService.findEmail({ email });
 
-    if (findEmail.length === 1) {
+    if (findEmail) {
       return res.status(409).json({ message: 'User already registered' });
     }
 
