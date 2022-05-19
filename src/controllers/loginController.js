@@ -7,7 +7,7 @@ const login = async (req, res, next) => {
 
     const findEmail = await userService.findEmail({ email });
 
-    if (findEmail.length === 0) {
+    if (findEmail) {
       return res.status(400).json({ message: 'Invalid fields' });
     }
 

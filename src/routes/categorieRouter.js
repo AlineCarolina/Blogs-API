@@ -1,9 +1,8 @@
 const express = require('express');
+const categorieController = require('../controllers/categorieController');
 
 const { validateToken } = require('../middlewares/validateToken');
 const { validateCategorie } = require('../middlewares/validateCategorie');
-
-const categorieController = require('../controllers/categorieController');
 
 const router = express.Router();
 
