@@ -2,7 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const routes = require('./routes');
 
-const { errorMiddleware } = require('../middlewares/errorMiddleware');
+const { errorMiddleware } = require('./middlewares/errorMiddleware');
 
 const app = express();
 
@@ -10,7 +10,7 @@ app.use(bodyParser.json());
 
 app.use(errorMiddleware);
 
-app.get('/', (request, response) => {
+app.get('/', (_request, response) => {
   response.send();
 });
 
