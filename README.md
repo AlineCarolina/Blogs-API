@@ -1,10 +1,13 @@
 # Project Blogs API ! 
 
-In this project I architected and developed an API for a CRUD blog post (following REST principles) with a focus on learning how to use the ORM Sequelize for communicating the API with the MySQL database.
+In this project I architected and developed an API for a CRUD blog post (following REST principles). 
+To make a post, you need a user and a login (with a valid email address) as the API returns an authentication token that is used to post for each user.
 
 ---
 
 ## About the project
+
+This project was developed with a focus on learning how to use the ORM Sequelize for communicating the API with the MySQL database.
 
 ---
 
@@ -15,6 +18,7 @@ In this project I architected and developed an API for a CRUD blog post (followi
 * Express
 * MySQL
 * Sequelize
+* JWT
 
 ---
 
